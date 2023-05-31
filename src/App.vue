@@ -41,16 +41,29 @@ const i18n = useI18n();
 </template>
 
 <style>
-article {
+section {
     border: 2px solid var(--landsoul-color);
     padding: 4px;
     margin: 4px;
 }
+menu {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 640px) {
+    menu {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
 </style>
 <style scoped>
+header,
+footer {
+    padding: 8px;
+}
 footer {
     margin-top: 16px;
-    padding: 4px;
     display: grid;
     place-items: center;
     background: var(--landsoul-shadow);
