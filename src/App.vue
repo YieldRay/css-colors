@@ -7,7 +7,7 @@ import OkLAB from "./components/OkLAB.vue";
 import OkLCH from "./components/OkLCH.vue";
 import HWB from "./components/HWB.vue";
 import COLOR from "./components/COLOR.vue";
-import { useI18n } from "vue-i18n/dist/vue-i18n.esm-bundler.js";
+import { useI18n } from "vue-i18n";
 
 const i18n = useI18n();
 </script>
@@ -17,7 +17,10 @@ const i18n = useI18n();
         <h1>CSS Colors</h1>
         <p>https://developer.mozilla.org/en-US/docs/Web/CSS/color_value</p>
         <p>https://developer.mozilla.org/en-US/blog/css-color-module-level-4/</p>
-        <select :value="i18n.locale.value" @change="(e) => (i18n.locale.value = e.target.value)">
+        <select
+            :value="i18n.locale.value"
+            @change="(e:Event) => (i18n.locale.value = ((e as InputEvent).target as HTMLSelectElement).value)"
+        >
             <option value="en-US">en-US</option>
             <option value="zh-CN">zh-CN</option>
         </select>

@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { useI18n } from "vue-i18n/dist/vue-i18n.esm-bundler.js";
+import { useI18n } from "vue-i18n";
 
 const h = ref(0);
 const w = ref(0);

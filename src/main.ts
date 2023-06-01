@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import { createI18n } from "vue-i18n/dist/vue-i18n.esm-bundler.js";
+import { createI18n } from "vue-i18n";
 import "landsoul";
 import App from "./App.vue";
 
