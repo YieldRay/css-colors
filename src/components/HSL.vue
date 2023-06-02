@@ -1,14 +1,6 @@
 <template>
     <section>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl">
-            <h4>hsl</h4>
-        </a>
-
-        <small>
-            <i>
-                {{ format(color) }}
-            </i>
-        </small>
+        <ColorTitle title="hsl" :color="color"></ColorTitle>
 
         <menu>
             <label>
@@ -34,7 +26,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import format from "@/format";
+import ColorTitle from "./layout/ColorTitle.vue";
 
 const h = ref(0);
 const s = ref(180);
@@ -59,19 +51,3 @@ const { t } = useI18n({
     },
 });
 </script>
-
-<style scoped>
-small {
-    display: grid;
-    white-space: pre-wrap;
-    display: block;
-    width: 100px;
-    height: 100px;
-    border: 1px solid #000;
-    background: v-bind(color);
-}
-i {
-    color: v-bind(color);
-    filter: grayscale(1) contrast(999) invert(1);
-}
-</style>

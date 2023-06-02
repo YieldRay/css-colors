@@ -59,6 +59,15 @@ menu {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
+input {
+    max-width: 6rem;
+}
+input[type="text"] {
+    max-width: 5rem;
+}
+label {
+    font-size: small;
+}
 </style>
 <style scoped>
 header,
