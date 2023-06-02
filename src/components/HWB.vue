@@ -6,7 +6,7 @@
 
         <small>
             <i>
-                {{ text }}
+                {{ format(color) }}
             </i>
         </small>
 
@@ -34,13 +34,13 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import format from "@/format";
 
 const h = ref(0);
 const w = ref(0);
 const b = ref(50);
 const a = ref(1);
 const color = computed(() => `hwb(${h.value}deg ${w.value}% ${b.value}% / ${a.value})`);
-const text = computed(() => `hwb(\n    ${h.value}deg\n    ${w.value}%\n    ${b.value}% /\n    ${a.value}\n)`);
 
 const { t } = useI18n({
     messages: {

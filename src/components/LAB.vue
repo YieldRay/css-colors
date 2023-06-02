@@ -6,7 +6,7 @@
 
         <small>
             <i>
-                {{ text }}
+                {{ format(color) }}
             </i>
         </small>
 
@@ -34,13 +34,13 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import format from "@/format";
 
 const l = ref(50);
 const a = ref(0);
 const b = ref(0);
 const alpha = ref(1);
 const color = computed(() => `lab(${l.value}% ${a.value} ${b.value} / ${alpha.value})`);
-const text = computed(() => `lab(\n    ${l.value}%\n    ${a.value}\n    ${b.value} /\n    ${alpha.value}\n)`);
 
 const { t } = useI18n({
     messages: {
